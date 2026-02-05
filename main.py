@@ -35,8 +35,8 @@ MAX_HISTORY_LENGTH = 20
 # ============================================================
 # MODELOS DE GEMINI
 # ============================================================
-PRIMARY_MODEL = "gemini-3-pro-preview"  # El modelo más avanzado de Google (1M tokens, multimodal)
-FALLBACK_MODEL = "gemini-2.0-flash"     # Fallback rápido si hay error de cuota
+PRIMARY_MODEL = "gemini-2.0-flash"      # Modelo rápido y potente (disponible para todos)
+FALLBACK_MODEL = "gemini-1.5-flash"     # Fallback si hay error de cuota
 
 # Instrucción de sistema para el bot
 SYSTEM_INSTRUCTION = """Eres un asistente amigable y útil en WhatsApp. 
