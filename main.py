@@ -35,8 +35,8 @@ MAX_HISTORY_LENGTH = 20
 # ============================================================
 # MODELOS DE GEMINI
 # ============================================================
-PRIMARY_MODEL = "gemini-1.5-flash-latest"  # Modelo estable y rápido
-FALLBACK_MODEL = "gemini-pro"              # Fallback clásico que siempre funciona
+PRIMARY_MODEL = "gemini-pro"    # Modelo básico que siempre funciona
+FALLBACK_MODEL = "gemini-pro"   # Mismo modelo como fallback
 
 # Instrucción de sistema para el bot
 SYSTEM_INSTRUCTION = """Eres un asistente amigable y útil en WhatsApp. 
@@ -71,10 +71,7 @@ def get_gemini_response(user_id: str, content: list, model_name: str = PRIMARY_M
     
     try:
         # Crear el modelo
-        model = genai.GenerativeModel(
-            model_name=model_name,
-            system_instruction=SYSTEM_INSTRUCTION
-        )
+        model = genai.GenerativeModel(model_name=model_name)
         
         # Iniciar chat con historial
         chat = model.start_chat(history=conversation_history[user_id][:-1])
