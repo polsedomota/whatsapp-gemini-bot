@@ -35,8 +35,8 @@ MAX_HISTORY_LENGTH = 20
 # ============================================================
 # MODELOS DE GEMINI
 # ============================================================
-PRIMARY_MODEL = "gemini-pro"    # Modelo básico que siempre funciona
-FALLBACK_MODEL = "gemini-pro"   # Mismo modelo como fallback
+PRIMARY_MODEL = "gemini-2.5-flash"   # Modelo más reciente y potente
+FALLBACK_MODEL = "gemini-2.0-flash"  # Fallback estable
 
 # Instrucción de sistema para el bot
 SYSTEM_INSTRUCTION = """Eres un asistente amigable y útil en WhatsApp. 
