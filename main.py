@@ -92,6 +92,7 @@ def get_gemini_response(user_id: str, content: list, model_name: str = PRIMARY_M
     
     except Exception as e:
         error_str = str(e).lower()
+        print(f"[ERROR GEMINI] {str(e)}")  # Log para ver en Render
         
         # Si es error de cuota y estamos en el modelo primario, intentar con fallback
         if model_name == PRIMARY_MODEL and ("quota" in error_str or "429" in error_str or "resource" in error_str):
@@ -105,7 +106,7 @@ def get_gemini_response(user_id: str, content: list, model_name: str = PRIMARY_M
             conversation_history[user_id].pop()
         
         # Error genérico
-        return "⚠️ Hubo un problema procesando tu mensaje. Intenta de nuevo en unos segundos."
+        return f"⚠️ Error: {str(e)[:100]}"
 
 
 def download_media(media_url: str) -> bytes | None:
